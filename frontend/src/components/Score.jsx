@@ -1,12 +1,11 @@
-function Score() {
+import { useState } from "react";
 
-  const handleClick = () => {
-    const dropdown = document.querySelector('.lang-picker-dropdown');
-    const dropdownHead = document.querySelector('.dropdown-head');
-    const element = <div className="lang-picker-overlay"></div>;
-    document.body.appendChild(element)
-    dropdown.classList.toggle('hidden')
-    dropdownHead.classList.toggle('hidden')
+function Score({handleClickLang}) {
+
+  const [lang, setLang] = useState('ar');
+
+  const handleClickFlag = () => {
+    
   }
 
   const styleSVG = {
@@ -14,52 +13,27 @@ function Score() {
     width: '40px'
   };
 
+  const flags =[];
+  const flags_y = [33, 1, 2, 3, 5, 7, 8];
+  for (let i = 0; i < 7; i++) {
+    flags.push(
+      <div key={i} data-index={i} className="lang-picker-dropdown-item">
+        <svg viewBox={`0 ${flags_y[i] * 66} 82 66`} style={styleSVG}>
+          <image height="3168" width="82" href="https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg"></image>
+        </svg>
+      </div>
+    );
+  }
+
+  const [flag, setFlag] = useState(flags[0]);
+
+
   return (
       <section className="score">
-          <div className="lang-picker-container" onClick={handleClick}>
-              <div className="selected-lang">
-                  <svg viewBox="0 132 82 66" style={styleSVG}>
-                      <image height="3168" width="82" href="https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg"></image>
-                  </svg>
-              </div>
+          <div className="lang-picker-container">
+              <div className="selected-lang" onClick={handleClickLang}>{flag}</div>
               <div className="dropdown-head hidden"></div>
-              <div className="lang-picker-dropdown hidden">
-                  <div data-index="0" className="lang-picker-dropdown-item">
-                      <svg viewBox="0 66 82 66" style={styleSVG}>
-                          <image height="3168" width="82" href="https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg"></image>
-                      </svg>
-                  </div>
-                  <div data-index="1" className="lang-picker-dropdown-item">
-                      <svg viewBox="0 132 82 66" style={styleSVG}>
-                          <image height="3168" width="82" href="https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg"></image>
-                      </svg>
-                  </div>
-                  <div data-index="2" className="lang-picker-dropdown-item">
-                      <svg viewBox="0 2178 82 66" style={styleSVG}>
-                          <image height="3168" width="82" href="https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg"></image>
-                      </svg>
-                  </div>
-                  <div data-index="3" className="lang-picker-dropdown-item">
-                      <svg viewBox="0 198 82 66" style={styleSVG}>
-                          <image height="3168" width="82" href="https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg"></image>
-                      </svg>
-                  </div>
-                  <div data-index="4" className="lang-picker-dropdown-item">
-                      <svg viewBox="0 330 82 66" style={styleSVG}>
-                          <image height="3168" width="82" href="https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg"></image>
-                      </svg>
-                  </div>
-                  <div data-index="5" className="lang-picker-dropdown-item">
-                      <svg viewBox="0 462 82 66" style={styleSVG}>
-                          <image height="3168" width="82" href="https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg"></image>
-                      </svg>
-                  </div>
-                  <div data-index="6" className="lang-picker-dropdown-item">
-                      <svg viewBox="0 528 82 66" style={styleSVG}>
-                          <image height="3168" width="82" href="https://d35aaqx5ub95lt.cloudfront.net/vendor/87938207afff1598611ba626a8c4827c.svg"></image>
-                      </svg>
-                  </div>
-              </div>
+              <div className="lang-picker-dropdown hidden">{flags}</div>
           </div>
           <div className="progress-bar"></div>
           <div className="hearts-left">
