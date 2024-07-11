@@ -95,12 +95,12 @@ main {
   align-items: center;
   border-bottom: 3px solid #e2e2e2;
   padding: 10px 20px;
-  gap: 15px
+  gap: 15px;
 }
 
 .hidden {
   display: none!important;
-  transition: all .5s ease-in-out
+  transition: all .5s ease-in-out;
 }
 
 .lang-picker-container {
@@ -109,13 +109,14 @@ main {
   align-items: center;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
-  position: relative
+  position: relative;
 }
 
 .selected-lang {
   display: flex;
   justify-content: center;
-  align-items: center
+  align-items: center;
+  z-index: 1;
 }
 
 .lang-picker-overlay {
@@ -128,7 +129,7 @@ main {
   backdrop-filter: blur(3px);
   background-color: #00000080;
   z-index: 1;
-  cursor: pointer
+  cursor: pointer;
 }
 
 .lang-picker-dropdown {
@@ -144,7 +145,7 @@ main {
   z-index: 2;
   max-width: 390px;
   overflow-x: auto;
-  transition: all .5s ease-in-out
+  transition: all .5s ease-in-out;
 }
 
 .dropdown-head {
@@ -155,7 +156,7 @@ main {
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
   border-bottom: 10px solid white;
-  z-index: 3
+  z-index: 3;
 }
 
 .lang-picker-dropdown-item {
@@ -165,11 +166,12 @@ main {
   transition: all .1s ease-in-out;
   display: flex;
   align-items: center;
-  justify-content: center
+  justify-content: center;
+  z-index: -1;
 }
 
 .lang-picker-dropdown-item:hover {
-  background: #e2e2e2
+  background: #e2e2e2;
 }
 
 .progress-bar {
@@ -177,7 +179,7 @@ main {
   height: 18px;
   background-color: #e6e5e5;
   border-radius: 10px;
-  position: relative
+  position: relative;
 }
 
 .progress-bar:after {
@@ -189,7 +191,7 @@ main {
   background-color: #57cc02;
   border-radius: 10px;
   width: var(--width-after, 0%);
-  transition: width .5s ease-in-out
+  transition: width .5s ease-in-out;
 }
 
 .progress-bar:before {
@@ -203,44 +205,44 @@ main {
   width: var(--width-before, 0%);
   transition: width .5s ease-in-out;
   opacity: .2;
-  z-index: 1
+  z-index: 1;
 }
 
 .hearts-left {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8px
+  gap: 8px;
 }
 
 .hearts-left h1 {
   font-size: 1.2rem;
   font-weight: 600;
   color: red;
-  margin: 0
+  margin: 0;
 }
 
 .hearts-left img {
-  width: 38px
+  width: 38px;
 }
 
 .game {
   padding: 20px;
-  flex: 1
+  flex: 1;
 }
 
 .title {
   font-size: 1.6rem;
   font-weight: 600;
   margin: 5px 0 0;
-  color: #464646
+  color: #464646;
 }
 
 .cards {
   display: grid;
   grid-template-columns: repeat(2,1fr);
   gap: 30px;
-  margin-top: 30px
+  margin-top: 30px;
 }
 
 .card {
@@ -259,7 +261,7 @@ main {
   -webkit-tap-highlight-color: transparent;
   overflow: hidden;
   height: 50px;
-  text-transform: lowercase
+  text-transform: lowercase;
 }
 
 .selected {
@@ -267,12 +269,12 @@ main {
   border-bottom: 4px solid #83d8ff;
   background: #ddf3fe;
   color: #2baeef;
-  transition: all .1s ease-in-out
+  transition: all .1s ease-in-out;
 }
 
 .disabled {
   pointer-events: none;
-  opacity: .4
+  opacity: .4;
 }
 
 .correct {
@@ -280,7 +282,7 @@ main {
   border-bottom: 4px solid #87ff2b;
   background: #e1ffe1;
   color: #2bef2b;
-  transition: all .1s ease-in-out
+  transition: all .1s ease-in-out;
 }
 
 .wrong {
@@ -288,7 +290,7 @@ main {
   border-bottom: 4px solid #ff2b2b;
   background: #ffe1e1;
   color: #ef2b2b;
-  transition: all .1s ease-in-out
+  transition: all .1s ease-in-out;
 }
 
 .result {
@@ -297,7 +299,7 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 15px 20px 20px
+  padding: 15px 20px 20px;
 }
 
 .win {
@@ -306,14 +308,14 @@ main {
   justify-content: center;
   gap: 16px;
   padding: 15px 20px 20px;
-  background: #d7feb8
+  background: #d7feb8;
 }
 
 .win-title {
   font-size: 1.4rem;
   font-weight: 600;
   margin: 0;
-  color: #59a701
+  color: #59a701;
 }
 
 .play-again {
@@ -329,12 +331,12 @@ main {
   outline: none;
   text-transform: uppercase;
   border-bottom: 3px solid #4aa101;
-  -webkit-tap-highlight-color: transparent
+  -webkit-tap-highlight-color: transparent;
 }
 
 .play-again:hover {
   background: #4aa101;
-  border-bottom: 3px solid #3c7f01
+  border-bottom: 3px solid #3c7f01;
 }
 
 .lost {
@@ -345,50 +347,50 @@ main {
   justify-content: center;
   gap: 16px;
   padding: 15px 20px 20px;
-  opacity: 0
+  opacity: 0;
 }
 
 .lost .play-again {
   background: #f94d51;
-  border-bottom: 3px solid #d41c1d
+  border-bottom: 3px solid #d41c1d;
 }
 
 .lost .win-title {
-  color: #e72e33
+  color: #e72e33;
 }
 
 .lost .play-again:hover {
   background: #d41c1d;
-  border-bottom: 3px solid #b40c0d
+  border-bottom: 3px solid #b40c0d;
 }
 
 @media (max-width: 500px) {
   main {
       min-width:100%;
       height: 100%;
-      min-height: 100%
+      min-height: 100%;
   }
 
   .loading-screen {
       width: 100%;
-      height: 100%
+      height: 100%;
   }
 
   .lang-picker-dropdown {
-      max-width: 95svw
+      max-width: 95svw;
   }
 }
 
 ::-webkit-scrollbar {
-  height: 8px
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
   background-color: #d4d4d4;
   border-radius: 30px;
-  border: transparent
+  border: transparent;
 }
